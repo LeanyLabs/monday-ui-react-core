@@ -5,6 +5,8 @@ import { ArgsTable, Story, Canvas, Meta } from "@storybook/addon-docs";
 import { BUTTON_GROUP, SPLIT_BUTTON, LABEL } from "../../../storybook/components/related-components/component-description-map";
 import "./chips.stories.scss";
 import { MultipleStoryElementsWrapper } from "../../../storybook/components";
+import Search  from "../../Search/Search";
+import DialogContentContainer from "../../DialogContentContainer/DialogContentContainer";
 import { Calendar, Remove, Add, Email } from "../../Icon/Icons";
 
 <Meta title="Components/Chips/Chip" component={Chips} />
@@ -93,9 +95,32 @@ Chips are compact elements that represent an input, attribute, or action. They m
 ### Colorful chips for different content
 Sometimes when needed, chips can change fill color. 
 
+<Canvas>
+ <Story name="Colorful chips for different content">
+    <DialogContentContainer className="monday-style-story-avatar_search-bar">
+      <div className="monday-style-story-avatar_item"><Chips label="January" color={Chips.colors.POSITIVE} /></div>
+      <Search />
+      <div className="monday-style-story-avatar_item"><Chips label="August" readOnly={true} color="#ECDFF8" /></div>
+      <div className="monday-style-story-avatar_item"><Chips label="April" readOnly={true} color="#FEE3FB" /></div>
+      <div className="monday-style-story-avatar_item"><Chips label="March" readOnly={true} color="#FFEFB3" /></div>
+    </DialogContentContainer>
+  </Story>
+</Canvas>
+
 
 ### Chips in Person Column
 Chips can be removable.
+
+<Canvas>
+ <Story name="Chips in Person Column">
+    <DialogContentContainer className="monday-style-story-avatar_search">
+      <Search placeholder="Search names, positions, or a team" />
+      <div className="monday-style-story-avatar_item"><Chips label="Esther Schanler" /></div>
+      <div className="monday-style-story-avatar_item"><Chips label="Itai Shabtai" /></div> 
+      <div className="monday-style-story-avatar_search_lable">Suggested people</div>
+    </DialogContentContainer>
+  </Story>
+</Canvas>
 
 ## Related components
 <RelatedComponents componentsNames={[LABEL, LABEL, BUTTON_GROUP]}/>

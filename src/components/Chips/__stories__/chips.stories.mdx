@@ -6,6 +6,7 @@ import { BUTTON_GROUP, SPLIT_BUTTON, LABEL } from "../../../storybook/components
 import "./chips.stories.scss";
 import { MultipleStoryElementsWrapper } from "../../../storybook/components";
 import Search  from "../../Search/Search";
+import Avatar from "../../Avatar/Avatar";
 import DialogContentContainer from "../../DialogContentContainer/DialogContentContainer";
 import { Calendar, Remove, Add, Email } from "../../Icon/Icons";
 
@@ -14,6 +15,8 @@ import { Calendar, Remove, Add, Email } from "../../Icon/Icons";
 <!--- Component template -->
 
 export const chipsTemplate = createComponentTemplate(Chips);
+const IMG_SRC =
+  "https://files.monday.com/use1/photos/16447897/small/16447897-Hadas_Farhi_photo_2020_10_04_10_14_06.png?1601806446";
 
 <!--- Component documentation -->
 
@@ -24,10 +27,8 @@ export const chipsTemplate = createComponentTemplate(Chips);
 - [Usage](#usage)
 - [Variants](#variants)
 - [Do’s and don’ts](#dos-and-donts)
-- [Anatomy](#anatomy)
 - [Use cases and examples](#use-cases-and-examples)
 - [Related components](#related-components)
-- [Change log](#change-log)
 - [Feedback](#feedback)
 
 ## Overview
@@ -115,9 +116,29 @@ Chips can be removable.
  <Story name="Chips in Person Column">
     <DialogContentContainer className="monday-style-story-avatar_search">
       <Search placeholder="Search names, positions, or a team" />
-      <div className="monday-style-story-avatar_item"><Chips label="Esther Schanler" /></div>
-      <div className="monday-style-story-avatar_item"><Chips label="Itai Shabtai" /></div> 
+      <MultipleStoryElementsWrapper className="monday-style-story-avatar_search_selected-people">
+        <div className="monday-style-story-avatar_item"><Chips label="Esther Schanler" /></div>
+        <div className="monday-style-story-avatar_item"><Chips label="Itai Shabtai" /></div> 
+      </MultipleStoryElementsWrapper>
       <div className="monday-style-story-avatar_search_lable">Suggested people</div>
+      <MultipleStoryElementsWrapper className="monday-style-story-avatar_search_unselected-people">
+        <MultipleStoryElementsWrapper>
+          <Avatar size={Avatar.sizes.LARGE} src={IMG_SRC} type={Avatar.types.IMG} />
+          <span className="c">May Kishon  (UX/UI Product Designer)</span>
+        </MultipleStoryElementsWrapper>
+        <MultipleStoryElementsWrapper>
+          <Avatar size={Avatar.sizes.LARGE} backgroundColor="#784BD1" text="LC" type={Avatar.types.TEXT} />
+          <span className="c">Liron Cohen  (Customer Experience)</span>
+        </MultipleStoryElementsWrapper>
+        <MultipleStoryElementsWrapper>
+          <Avatar size={Avatar.sizes.LARGE} text="DY" type={Avatar.types.TEXT} />
+          <span className="c">Amanda Lawrence  (Customer Experience Designer)</span>
+        </MultipleStoryElementsWrapper>
+        <MultipleStoryElementsWrapper>
+          <Avatar size={Avatar.sizes.LARGE} src={IMG_SRC} type={Avatar.types.IMG} />
+          <span className="c">Dor Yehuda  (Customer Experience Designer)</span>
+        </MultipleStoryElementsWrapper>
+      </MultipleStoryElementsWrapper>
     </DialogContentContainer>
   </Story>
 </Canvas>

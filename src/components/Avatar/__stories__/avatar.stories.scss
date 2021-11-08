@@ -1,5 +1,8 @@
 .monday-style-story-avatar {
   &_multiplue-reverse {
+    display: flex;
+    align-items: flex-start;
+
     .monday-style-avatar {
       margin: -5px;
       &:first-child {

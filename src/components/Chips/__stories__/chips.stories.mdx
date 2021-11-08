@@ -114,29 +114,29 @@ Chips can be removable.
 
 <Canvas>
  <Story name="Chips in Person Column">
-    <DialogContentContainer className="monday-style-story-avatar_search">
+    <DialogContentContainer className="monday-style-story-avatar_search-bar">
       <Search placeholder="Search names, positions, or a team" />
-      <MultipleStoryElementsWrapper className="monday-style-story-avatar_search_selected-people">
-        <div className="monday-style-story-avatar_item"><Chips label="Esther Schanler" /></div>
-        <div className="monday-style-story-avatar_item"><Chips label="Itai Shabtai" /></div> 
+      <MultipleStoryElementsWrapper>
+        <Chips label="Esther Schanler" />
+        <Chips label="Itai Shabtai" />
       </MultipleStoryElementsWrapper>
-      <div className="monday-style-story-avatar_search_lable">Suggested people</div>
-      <MultipleStoryElementsWrapper className="monday-style-story-avatar_search_unselected-people">
+      <div className="monday-style-story-avatar_lable">Suggested people</div>
+      <MultipleStoryElementsWrapper className="monday-style-story-avatar_search">
         <MultipleStoryElementsWrapper>
           <Avatar size={Avatar.sizes.LARGE} src={IMG_SRC} type={Avatar.types.IMG} />
-          <span className="c">May Kishon  (UX/UI Product Designer)</span>
+          <span>May Kishon  (UX/UI Product Designer)</span>
         </MultipleStoryElementsWrapper>
         <MultipleStoryElementsWrapper>
           <Avatar size={Avatar.sizes.LARGE} backgroundColor="#784BD1" text="LC" type={Avatar.types.TEXT} />
-          <span className="c">Liron Cohen  (Customer Experience)</span>
+          <span>Liron Cohen  (Customer Experience)</span>
         </MultipleStoryElementsWrapper>
         <MultipleStoryElementsWrapper>
           <Avatar size={Avatar.sizes.LARGE} text="DY" type={Avatar.types.TEXT} />
-          <span className="c">Amanda Lawrence  (Customer Experience Designer)</span>
+          <span>Amanda Lawrence  (Customer Experience Designer)</span>
         </MultipleStoryElementsWrapper>
         <MultipleStoryElementsWrapper>
           <Avatar size={Avatar.sizes.LARGE} src={IMG_SRC} type={Avatar.types.IMG} />
-          <span className="c">Dor Yehuda  (Customer Experience Designer)</span>
+          <span>Dor Yehuda  (Customer Experience Designer)</span>
         </MultipleStoryElementsWrapper>
       </MultipleStoryElementsWrapper>
     </DialogContentContainer>

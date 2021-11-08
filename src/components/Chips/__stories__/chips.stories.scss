@@ -7,44 +7,20 @@
     padding: 16px;
   }
 
-  &__item {
-    padding: 0;
-    margin: 0;
-    width: max-content;
-  }
-
   &_search {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 18px;
-    padding: 16px;
-
-    &_lable {
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 16px;
-      letter-spacing: 0px;
-      padding-left: 5px;
-    }
-
-    &_selected-people {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-    }
-
-    &_unselected-people {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 18px;
-      padding: 16px;
-    }
   }
-}
 
-.c {
-  width: max-content;
+  &_item {
+    width: max-content;
+  }
+
+  &_lable {
+    font-size: 14px;
+    padding-left: 5px;
+    margin-top: 4px;
+  }
 }

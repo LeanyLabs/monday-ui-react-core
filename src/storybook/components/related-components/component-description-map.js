@@ -7,8 +7,6 @@ import { LabelDescription } from "./descriptions/label-description";
 export const SPLIT_BUTTON = "split-button";
 export const BUTTON_GROUP = "button-group";
 export const LABEL = "label";
-export const SPLIT_BUTTON = "split-button";
-export const BUTTON_GROUP = "button-group";
 export const CHECKBOX = "checkbox";
 export const RADIO_BUTTON = "radio-button";
 

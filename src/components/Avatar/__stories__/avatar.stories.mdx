@@ -7,7 +7,7 @@ import { TOOLTIP, LABEL, CHIPS } from "../../../storybook/components/related-com
 import "./avatar.stories.scss";
 import { WhatsNew, Home, Person } from "../../Icon/Icons";
 import { MultipleStoryElementsWrapper } from "../../../storybook/components";
-import { home, guest, minus, person1, person2, person3, manIcon, womanIcon, owner } from "./assets";
+import { home, guest, minus, person1, person2, person3, maleIcon, femaleIcon, owner } from "./assets";
 
 <Meta 
   title="Components/Avatars/Avatar" 
@@ -138,11 +138,11 @@ Use for non-person avatars, such as a workspace or team.
     },
     {
       positive: {
-        component:<Avatar src={manIcon} type={Avatar.types.IMG} />,
+        component:<Avatar src={maleIcon} type={Avatar.types.IMG} />,
         description:"Use branded generic avatars when a user has not set their avatar image."
       },
       negative: {
-        component:<Avatar src={womanIcon} type={Avatar.types.IMG} />,
+        component:<Avatar src={femaleIcon} type={Avatar.types.IMG} />,
         description:"Don’t make assumptions and use gendered placeholder avatars."
       }
     }

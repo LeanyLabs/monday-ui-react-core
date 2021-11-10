@@ -116,29 +116,29 @@ Chips can be removable.
  <Story name="Chips in Person Column">
     <DialogContentContainer className="monday-style-story-avatar_search-bar">
       <Search placeholder="Search names, positions, or a team" />
-      <MultipleStoryElementsWrapper>
+      <div className="monday-style-story-avatar_inline-container">
         <Chips label="Esther Schanler" />
         <Chips label="Itai Shabtai" />
-      </MultipleStoryElementsWrapper>
+      </div>
       <div className="monday-style-story-avatar_lable">Suggested people</div>
-      <MultipleStoryElementsWrapper className="monday-style-story-avatar_search">
-        <MultipleStoryElementsWrapper>
+      <div className="monday-style-story-avatar_search">
+        <div className="monday-style-story-avatar_inline-container">
           <Avatar size={Avatar.sizes.LARGE} src={IMG_SRC} type={Avatar.types.IMG} />
           <span>May Kishon  (UX/UI Product Designer)</span>
-        </MultipleStoryElementsWrapper>
-        <MultipleStoryElementsWrapper>
+        </div>
+        <div className="monday-style-story-avatar_inline-container">
           <Avatar size={Avatar.sizes.LARGE} backgroundColor="#784BD1" text="LC" type={Avatar.types.TEXT} />
           <span>Liron Cohen  (Customer Experience)</span>
-        </MultipleStoryElementsWrapper>
-        <MultipleStoryElementsWrapper>
+        </div>
+        <div className="monday-style-story-avatar_inline-container">
           <Avatar size={Avatar.sizes.LARGE} text="DY" type={Avatar.types.TEXT} />
           <span>Amanda Lawrence  (Customer Experience Designer)</span>
-        </MultipleStoryElementsWrapper>
-        <MultipleStoryElementsWrapper>
+        </div>
+        <div className="monday-style-story-avatar_inline-container">
           <Avatar size={Avatar.sizes.LARGE} src={IMG_SRC} type={Avatar.types.IMG} />
           <span>Dor Yehuda  (Customer Experience Designer)</span>
-        </MultipleStoryElementsWrapper>
-      </MultipleStoryElementsWrapper>
+        </div>
+      </div>
     </DialogContentContainer>
   </Story>
 </Canvas>

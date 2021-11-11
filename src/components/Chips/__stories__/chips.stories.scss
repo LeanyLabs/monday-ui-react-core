@@ -30,4 +30,12 @@
     justify-content: center;
     gap: 8px;
   }
+
+  &_name {
+    font-size: 14px;
+
+    span {
+      color: #676879;
+    }
+  }
 }

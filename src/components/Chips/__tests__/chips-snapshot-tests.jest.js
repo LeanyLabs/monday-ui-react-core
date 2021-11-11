@@ -29,7 +29,6 @@ describe("Chips renders correctly", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  // To Do
   it.skip("renders correctly with right icon ", () => {
     const tree = renderer.create(<Chips rightIcon={Calendar} readOnly />).toJSON();
     expect(tree).toMatchSnapshot();

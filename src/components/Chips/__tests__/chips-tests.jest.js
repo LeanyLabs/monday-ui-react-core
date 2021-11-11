@@ -8,6 +8,7 @@ describe("Chips tests", () => {
   const className = "test-class";
   let onDeletedStub;
   let chipComponent;
+
   beforeEach(() => {
     onDeletedStub = sinon.stub();
     chipComponent = render(
@@ -31,5 +32,4 @@ describe("Chips tests", () => {
     rerender (<Chips disabled />);
     expect(container.firstChild.classList.contains('with-close')).toBeFalsy();
   })
-
 });

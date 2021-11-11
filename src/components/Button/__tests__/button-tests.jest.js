@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent, cleanup, act } from "@testing-library/react";
+import { render, fireEvent, cleanup } from "@testing-library/react";
 import { sinon, expect } from "../../../test/test-helpers";
 import Button from "../Button";
 
@@ -75,6 +75,7 @@ describe("<Buttoon />", () => {
       });
     });
   });
+
   describe("mouse down", () => {
     it("should call the click callback when clicked", () => {
       const { container } = buttonComponent;
@@ -82,6 +83,7 @@ describe("<Buttoon />", () => {
       expect(onMouseDownStub).to.be.calledOnce;
     });
   });
+
   describe("adding classnames", () => {
     it("should should add class name when provided", () => {
       const { container } = buttonComponent;
@@ -89,6 +91,7 @@ describe("<Buttoon />", () => {
       expect(classNameQuery).to.be.ok;
     });
   });
+
   describe("a11y", () => {
     it("should add the aria label", () => {
       const ariaLabel = "Icon Name";
@@ -101,6 +104,7 @@ describe("<Buttoon />", () => {
       expect(buttonElement).to.be.ok;
     });
   });
+
   describe("sizes", () => {
     beforeEach(() => {
       const { unmount } = buttonComponent;
@@ -136,6 +140,7 @@ describe("<Buttoon />", () => {
       expect(buttonElement.classList.contains(`monday-style-button--size-${Button.sizes.LARGE}`)).to.equal(true);
     });
   });
+  
   describe("colors", () => {
     beforeEach(() => {
       const { unmount } = buttonComponent;

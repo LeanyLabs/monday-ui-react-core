@@ -1,0 +1,42 @@
+@import "../../../styles/themes.scss";
+
+.monday-storybook-label {
+  &_group {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 25px 176px 25px 30px
+  }
+
+  &_title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    margin-right: 14px;
+  }
+
+  &_block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+  }
+
+  &_inline-block {
+      display: flex;
+      gap: 10px;
+  }
+
+  &_article {
+      display: block;
+      width: 300px;
+  }
+
+  &_column-block {
+      display: flex;
+      flex-direction: column;
+      row-gap: 25px;
+  }
+}
+

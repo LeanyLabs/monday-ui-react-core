@@ -1,4 +1,5 @@
 @import "../../../styles/themes.scss";
+@import "../../../styles/typography.scss";
 
 .monday-storybook-label {
   &_group {
@@ -6,14 +7,6 @@
     flex-direction: column;
     gap: 40px;
     margin: 25px 176px 25px 30px
-  }
-
-  &_title {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 24px;
-    margin-right: 14px;
   }
 
   &_block {
@@ -36,7 +29,29 @@
   &_column-block {
       display: flex;
       flex-direction: column;
-      row-gap: 25px;
+      column-gap: 25px;
+  }
+  
+  &_title {
+    display: inline;
+    padding-right: 8px;
+  }
+
+  &_bad-lable {
+    border-radius: $border-radius-small;
+      div {
+       border: none;
+      }
+      span {
+        @include theme-prop(color, text-color-on-primary);
+      }
   }
 }
 
+.purple {
+  background-color: $amethyst;
+}
+
+.pink {
+  background-color: $light-pink
+}

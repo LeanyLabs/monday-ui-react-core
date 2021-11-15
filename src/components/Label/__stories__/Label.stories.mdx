@@ -83,14 +83,14 @@ Please write here the component description
     },
     {
       positive: {
-        component:[<b>Categories</b>,<Label text="new" />],
+        component:<div className="monday-storybook-label_inline-block"><h5 className="monday-storybook-label_title">Categories</h5><Label text="new" /></div>,
         description:"Use label only once per item."
       },
       negative: {
         component:
           [
             <div className="monday-storybook-label_block">
-              <b>Categories</b>
+              <h5>Categories</h5>
               <div className="monday-storybook-label_inline-block"><Label text="Featured" /><Label text="CRM" /><Label text="Export" /></div>
             </div>
           ],
@@ -103,7 +103,7 @@ Please write here the component description
         description:"Use only the UI colors above."
       },
       negative: {
-        component:[<Label text="Beta" />,<Label text="Beta" />],
+        component:[<Label wrapperClassName="monday-storybook-label_bad-lable purple" kind={Label.kinds.LINE} text="Beta" />,<Label wrapperClassName="monday-storybook-label_bad-lable pink" kind={Label.kinds.LINE}  text="Beta" />],
         description:"Don’t use any content colors for labels. If the page is full of CTAs, use the outline state."
       }
     }
@@ -119,12 +119,12 @@ In case of visual overload, use the secondary label in order to create hirarchy.
   <Story name="Secondary label">
     <MultipleStoryElementsWrapper className="monday-storybook-label_column-block">
       <div className="monday-storybook-label_article">
-        <span className="monday-storybook-label_title">Gannt</span>
+        <h5 className="monday-storybook-label_title">Gannt</h5>
         <Label text="New" kind={Label.kinds.LINE} />
         <p>Plan, track and present your projects visually using the Gannt chart</p>
       </div>
       <div className="monday-storybook-label_article">
-        <span className="monday-storybook-label_title">Apps</span>
+        <h5 className="monday-storybook-label_title">Apps</h5>
         <Label text="New" kind={Label.kinds.LINE} />
         <p>Enhance your dashboard with widgets built on the monday apps framework</p>
       </div>

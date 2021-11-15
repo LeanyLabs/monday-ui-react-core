@@ -1,12 +1,12 @@
 import RadioButton from "../RadioButton";
 import { ArgsTable, Story, Canvas, Meta } from "@storybook/addon-docs";
 import { createComponentTemplate } from "../../../storybook/functions/create-component-story";
-import "./radioButton.stories.scss";
 import { TOGGLE, CHECKBOX, DROPDAWN } from "../../../storybook/components/related-components/component-description-map";
 import DialogContentContainer from "../../DialogContentContainer/DialogContentContainer";
+import "./radioButton.stories.scss";
 
 <Meta
-  title="Components/RadioButton"
+  title="Components/Radio Button"
   component={ RadioButton }
 />
 
@@ -28,7 +28,6 @@ export const radioButtonTemplate = createComponentTemplate(RadioButton);
 
 ## Overview
 A radio represents an item in a single selection list.
-
 <Canvas>
   <Story name="Overview"
          args={ {text: "Selection", checked: true } }>
@@ -47,16 +46,16 @@ A radio represents an item in a single selection list.
   "Place radio buttons  can be placed vertically or horizontaly, using 16px spacing.",
 ]}/>
 
-<Tip title="Tip">When there’s limited space or no default selection, consider using a select Dropdown instead.</Tip>
+<Tip>When there’s limited space or no default selection, consider using a select Dropdown instead.</Tip>
 
 ## Variants
 ### States
-Radio buttons have 4 states: regular, hover, selected, and disabled.
+Radio buttons have 3 states: regular, selected, and disabled.
 <Canvas>
   <Story name="States">
     <RadioButton text="Regular" />
-    <RadioButton text="Selected" checked={true} />
-    <RadioButton text="Disabled" disabled={true} />
+    <RadioButton text="Selected" checked />
+    <RadioButton text="Disabled" disabled />
   </Story>
 </Canvas>
 
@@ -68,15 +67,15 @@ Radio buttons have 4 states: regular, hover, selected, and disabled.
         component:
           <DialogContentContainer className="monday-style-radio-buttons_wrapper">
             <RadioButton text="Item 1" />
-            <RadioButton text="Item 2" checked={true} />
+            <RadioButton text="Item 2" checked />
           </DialogContentContainer>,
         description:"Use radio buttons when only one item can be selected from a list."
       },
       negative: {
         component:
           <DialogContentContainer className="monday-style-radio-buttons_wrapper">
-            <RadioButton text="Item 1" checked={true} />
-            <RadioButton text="Item 2" checked={true} />
+            <RadioButton text="Item 1" checked />
+            <RadioButton text="Item 2" checked />
           </DialogContentContainer>,
         description:"Don't use checkboxes when only one item can be selected from a list. Use radio buttons instead."
       }
@@ -85,7 +84,7 @@ Radio buttons have 4 states: regular, hover, selected, and disabled.
       positive: {
         component:
         <DialogContentContainer className="monday-style-radio-buttons_wrapper">
-            <RadioButton text="Item 1" checked={true} />
+            <RadioButton text="Item 1" checked />
             <RadioButton text="Item 2" />
             <RadioButton text="Item 3" />
           </DialogContentContainer>,
@@ -106,14 +105,13 @@ Radio buttons have 4 states: regular, hover, selected, and disabled.
 
 
 ## Use cases and examples
-
 ### Radio button in items list
 The user needs to select only one option.
 <Canvas>
   <Story name="Radio button in items list">
     <div className="monday-style-radio-buttons_wrapper-column">
       <div>Inbox view options</div>
-      <RadioButton text="Inbox updates" checked={true} />
+      <RadioButton text="Inbox updates" checked />
       <RadioButton text="I was mentioned" />
       <RadioButton text="All updates" />
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
-import Chips from "../Chips";
 import renderer from "react-test-renderer";
+import Chips from "../Chips";
 import { Calendar } from "../../Icon/Icons";
 
 describe("Chips renders correctly", () => {

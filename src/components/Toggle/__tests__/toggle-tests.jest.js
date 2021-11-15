@@ -10,6 +10,7 @@ describe("Toggle tests", () => {
   const toggleRole = "switch";
 
   describe("Default selected mode", () => {
+
     afterEach(() => {
       cleanup();
     });
@@ -62,6 +63,7 @@ describe("Toggle tests", () => {
   });
 
   describe("Is selected mode", () => {
+    
     afterEach(() => {
       cleanup();
     });

@@ -10,7 +10,6 @@ describe("Toggle tests", () => {
   const toggleRole = "switch";
 
   describe("Default selected mode", () => {
-
     afterEach(() => {
       cleanup();
     });
@@ -18,7 +17,7 @@ describe("Toggle tests", () => {
     it("should change state to off when is default selected and clicked", () => {
       const { getByRole } = render(
         <form name={formName}>
-          <Toggle componentClassName="dummy-class-name" isDefaultSelected />
+          <Toggle isDefaultSelected />
         </form>
       );
 
@@ -30,7 +29,7 @@ describe("Toggle tests", () => {
     it("should change state to on when is default not selected and clicked", () => {
       const { getByRole } = render(
         <form name={formName}>
-          <Toggle componentClassName="dummy-class-name" isDefaultSelected={false} />
+          <Toggle isDefaultSelected={false} />
         </form>
       );
       const toggle = getByRole(toggleRole);
@@ -41,7 +40,7 @@ describe("Toggle tests", () => {
     it("should not change state when disabled, default selected and clicked", () => {
       const { getByRole } = render(
         <form name={formName}>
-          <Toggle isDisabled={true} componentClassName="dummy-class-name" isDefaultSelected />
+          <Toggle isDisabled isDefaultSelected />
         </form>
       );
 
@@ -63,7 +62,6 @@ describe("Toggle tests", () => {
   });
 
   describe("Is selected mode", () => {
-    
     afterEach(() => {
       cleanup();
     });
@@ -71,7 +69,7 @@ describe("Toggle tests", () => {
     it("should not change state to off when is selected, clicked and prop does not changed", () => {
       const { getByRole } = render(
         <form name={formName}>
-          <Toggle componentClassName="dummy-class-name" isSelected />
+          <Toggle isSelected />
         </form>
       );
 
@@ -83,7 +81,7 @@ describe("Toggle tests", () => {
     it("should not change state to on when is not selected, clicked and prop does not changed", () => {
       const { getByRole } = render(
         <form name={formName}>
-          <Toggle componentClassName="dummy-class-name" isSelected={false} />
+          <Toggle isSelected={false} />
         </form>
       );
 

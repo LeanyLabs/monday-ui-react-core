@@ -33,6 +33,7 @@ describe("Toggle renders correctly", () => {
     const tree = renderer.create(<Toggle isDisabled />).toJSON();
     expect(tree).toMatchSnapshot();
   });
+<<<<<<< HEAD
 
   it("renders correctly with not default onOverrideText", () => {
     const tree = renderer.create(<Toggle onOverrideText="TestOn" />).toJSON();
@@ -54,4 +55,6 @@ describe("Toggle renders correctly", () => {
     const tree = renderer.create(<Toggle ariaControls="aria controls" />).toJSON();
     expect(tree).toMatchSnapshot();
   });
+=======
+>>>>>>> update/hadas/storybook-3
 });

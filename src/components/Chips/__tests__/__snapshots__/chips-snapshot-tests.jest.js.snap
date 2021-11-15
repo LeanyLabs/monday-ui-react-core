@@ -124,7 +124,6 @@ exports[`Chips renders correctly renders correctly with left icon 1`] = `
 </div>
 `;
 
-
 exports[`Chips renders correctly renders correctly with right icon 1`] = `
 <div
   className="chips--wrapper"

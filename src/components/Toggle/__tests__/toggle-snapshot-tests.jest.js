@@ -2,7 +2,6 @@ import React from "react";
 import renderer from "react-test-renderer";
 import Toggle from "../Toggle";
 
-
 describe("Toggle renders correctly", () => {
   it("renders correctly with empty props", () => {
     const tree = renderer.create(<Toggle />).toJSON();
@@ -33,7 +32,6 @@ describe("Toggle renders correctly", () => {
     const tree = renderer.create(<Toggle isDisabled />).toJSON();
     expect(tree).toMatchSnapshot();
   });
-<<<<<<< HEAD
 
   it("renders correctly with not default onOverrideText", () => {
     const tree = renderer.create(<Toggle onOverrideText="TestOn" />).toJSON();
@@ -45,7 +43,6 @@ describe("Toggle renders correctly", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  
   it("renders correctly when labels are hidden", () => {
     const tree = renderer.create(<Toggle areLabelsHidden />).toJSON();
     expect(tree).toMatchSnapshot();
@@ -55,6 +52,4 @@ describe("Toggle renders correctly", () => {
     const tree = renderer.create(<Toggle ariaControls="aria controls" />).toJSON();
     expect(tree).toMatchSnapshot();
   });
-=======
->>>>>>> update/hadas/storybook-3
 });

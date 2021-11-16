@@ -3,6 +3,7 @@ import { ArgsTable, Story, Canvas, Meta } from "@storybook/addon-docs";
 import { createComponentTemplate } from "../../../storybook/functions/create-component-story";
 import { RADIO_BUTTON, TOGGLE, DROPDAWN } from "../../../storybook/components/related-components/component-description-map";
 import DialogContentContainer from "../../DialogContentContainer/DialogContentContainer";
+import { Link } from "../../../storybook/components";
 import "./checkbox.stories.scss";
 
 
@@ -50,7 +51,7 @@ Checkboxes allow users to select one or more items from a set of options.
   "Checkbox will always apear with a label.",
 ]}/>
 
-<Tip title="Am I using the right component?">For settings that are immediately applied, consider using a toggle switch instead.</Tip>
+<Tip title="Am I using the right component?">For settings that are immediately applied, consider using a <Link href="/?path=/docs/components-toggle--overview">toggle switch</Link> instead.</Tip>
 
 ## Variants
 ### States
@@ -83,7 +84,7 @@ Has 4 states: regular, hover, selected, and disabled.
             <Checkbox label="Item 2" disabled />
             <Checkbox label="Item 3" disabled />
           </DialogContentContainer>,
-        description:"Don't use checkboxes when only one item can be selected from a list. Use radio buttons instead."
+        description:<>Don't use checkboxes when only one item can be selected from a list. Use <Link href="/?path=/docs/components-radio-button--overview" size={Link.sizes.MEDIUM}>radio buttons</Link> instead.</>
       }
     },
     {

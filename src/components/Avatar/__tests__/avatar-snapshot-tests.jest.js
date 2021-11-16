@@ -1,5 +1,5 @@
-import renderer from "react-test-renderer";
 import React from "react";
+import renderer from "react-test-renderer";
 import Avatar from "../Avatar";
 import { WhatsNew } from "../../Icon/Icons";
 
@@ -8,7 +8,6 @@ jest.mock("../../Icon/CustomSvgIcon", () => () => <div data-testid="custom-icon-
 const IMG_SRC =
   "https://files.monday.com/use1/photos/16447897/small/16447897-Hadas_Farhi_photo_2020_10_04_10_14_06.png?1601806446";
 const BADGE_SRC = "https://cdn7.monday.com/images/working-status/wfh.svg";
-
 
 describe("Avatar renders correctly", () => {
   it("renders correctly with empty props", () => {
@@ -59,6 +58,7 @@ describe("Avatar renders correctly", () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+  
   it("renders correctly with damaged src badges", () => {
     const tree = renderer
       .create(

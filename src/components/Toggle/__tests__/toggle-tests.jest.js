@@ -4,7 +4,6 @@ import { render, cleanup } from "@testing-library/react";
 import { expect as sinonExpect } from "../../../test/test-helpers";
 import Toggle from "../Toggle";
 
-
 describe("Toggle tests", () => {
   const formName = "myForm";
   const toggleRole = "switch";

@@ -1,6 +1,6 @@
 import React from "react";
-import Chips from "../Chips";
 import renderer from "react-test-renderer";
+import Chips from "../Chips";
 import { Calendar } from "../../Icon/Icons";
 
 describe("Chips renders correctly", () => {
@@ -15,12 +15,12 @@ describe("Chips renders correctly", () => {
   });
   
   it("renders correctly disabled chip", () => {
-    const tree = renderer.create(<Chips disabled={true} />).toJSON();
+    const tree = renderer.create(<Chips disabled />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it("renders correctly without close button", () => {
-    const tree = renderer.create(<Chips readOnly={true} />).toJSON();
+    const tree = renderer.create(<Chips readOnly />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -29,8 +29,13 @@ describe("Chips renders correctly", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it.skip("renders correctly with right icon ", () => {
+  it("renders correctly with right icon", () => {
     const tree = renderer.create(<Chips rightIcon={Calendar} readOnly />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it("renders correctly with left icon", () => {
+    const tree = renderer.create(<Chips leftIcon={Calendar} readOnly />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

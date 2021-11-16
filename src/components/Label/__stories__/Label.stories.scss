@@ -5,6 +5,7 @@
   &_group {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 40px;
     margin: 25px 176px 25px 30px
   }
@@ -54,4 +55,8 @@
 
 .pink {
   background-color: $light-pink
+}
+
+.stete-gap {
+  gap: 24px;
 }

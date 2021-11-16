@@ -1,9 +1,5 @@
 import React from "react";
-<<<<<<< HEAD:src/components/Button/__tests__/button-tests.jest.js
-import { render, fireEvent, cleanup } from "@testing-library/react";
-=======
 import { render, fireEvent, cleanup, act } from "@testing-library/react";
->>>>>>> update/hadas/storybook-3:src/components/Button/Button-test.js
 import { sinon, expect } from "../../test/test-helpers";
 import Button from "./Button";
 

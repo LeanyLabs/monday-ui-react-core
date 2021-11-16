@@ -29,8 +29,16 @@
     justify-content: space-between;
     align-items: center;
   }
-}
 
-.minus-margin {
-  margin-right: -8px;
+  &_minus-margin {
+    margin-right: -8px;
+  }
+  
+  &_list {
+    display: flexbox;
+  }
+  &_list-item {
+    display: inline-block;
+    width: 100%;
+  }
 }

@@ -47,16 +47,17 @@
         @include theme-prop(color, text-color-on-primary);
       }
   }
+
+  &_purple {
+    background-color: $amethyst;
+  }
+  
+  &_pink {
+    background-color: $light-pink
+  }
+  
+  &_states-gap {
+    gap: 24px;
+  }
 }
 
-.purple {
-  background-color: $amethyst;
-}
-
-.pink {
-  background-color: $light-pink
-}
-
-.stete-gap {
-  gap: 24px;
-}

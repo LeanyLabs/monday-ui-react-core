@@ -6,12 +6,11 @@ import Checkbox from "../Checkbox";
 describe("Checkbox tests", () => {
   const formName = "myForm";
   const checkboxName = "checkbox";
+
   const option1Value = "1";
   const option1Text = "Option 1";
-
   const option2Value = "2";
   const option2Text = "Option 2";
-
   const option3Value = "3";
   const option3Text = "Option 3";
 

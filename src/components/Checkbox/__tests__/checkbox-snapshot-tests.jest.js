@@ -24,7 +24,6 @@ describe("Checkbox renders correctly", () => {
       const tree = renderer.create(<Checkbox disabled />).toJSON();
       expect(tree).toMatchSnapshot();
     });
-
     
     it("with name", () => {
       const tree = renderer.create(<Checkbox name="checkbox" />).toJSON();
@@ -45,5 +44,4 @@ describe("Checkbox renders correctly", () => {
       const tree = renderer.create(<Checkbox indeterminate />).toJSON();
       expect(tree).toMatchSnapshot();
     });
-
 });

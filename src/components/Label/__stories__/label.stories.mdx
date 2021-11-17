@@ -53,8 +53,8 @@ A label indicates the status of an item. It is not clickable.
 ### States
 <Canvas>
   <Story name="States">
-    <div className="monday-storybook-label_group stete-gap"><Label text="New" />Fill</div>
-    <div className="monday-storybook-label_group stete-gap"><Label text="New" kind={Label.kinds.LINE} />Outline</div>
+    <div className="monday-storybook-label_group monday-storybook-label_states-gap"><Label text="New" />Fill</div>
+    <div className="monday-storybook-label_group monday-storybook-label_states-gap"><Label text="New" kind={Label.kinds.LINE} />Outline</div>
   </Story>
 </Canvas>
 
@@ -104,7 +104,7 @@ A label indicates the status of an item. It is not clickable.
         description:"Use only the UI colors above."
       },
       negative: {
-        component:[<Label wrapperClassName="monday-storybook-label_bad-lable purple" kind={Label.kinds.LINE} text="Beta" />,<Label wrapperClassName="monday-storybook-label_bad-lable pink" kind={Label.kinds.LINE}  text="Beta" />],
+        component:[<Label wrapperClassName="monday-storybook-label_bad-lable monday-storybook-label_purple" kind={Label.kinds.LINE} text="Beta" />,<Label wrapperClassName="monday-storybook-label_bad-lable monday-storybook-label_pink" kind={Label.kinds.LINE}  text="Beta" />],
         description:"Don’t use any content colors for labels. If the page is full of CTAs, use the outline state."
       }
     }
@@ -112,7 +112,6 @@ A label indicates the status of an item. It is not clickable.
 />
 
 ## Use cases and examples
-
 ### Secondary label 
 In case of visual overload, use the secondary label in order to create hirarchy.
 <Canvas>

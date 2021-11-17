@@ -29,7 +29,6 @@ describe("RadioButton renders correctly", () => {
       expect(tree).toMatchSnapshot();
     });
 
-    
     it("when default checked", () => {
       const tree = renderer.create(<RadioButton defaultChecked />).toJSON();
       expect(tree).toMatchSnapshot();

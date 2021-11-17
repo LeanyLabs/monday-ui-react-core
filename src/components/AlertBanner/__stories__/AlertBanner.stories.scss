@@ -1,0 +1,20 @@
+@import "../../../styles/themes.scss";
+
+.monday-storybook-alert-banner {
+  &_column-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+  }
+}
+
+.container {
+    width: 610px;
+}
+
+.small-container {
+    width: 320px;
+}
+.medium-container {
+    width: 392px;
+}

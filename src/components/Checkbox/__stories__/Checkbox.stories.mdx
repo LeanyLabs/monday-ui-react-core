@@ -53,7 +53,7 @@ Checkboxes allow users to select one or more items from a set of options.
   "Checkbox will always apear with a label.",
 ]}/>
 
-<Tip title="Am I using the right component?">For settings that are immediately applied, consider using a <Link href="#" size={Link.sizes.SMALL} withoutSpacing>toggle switch</Link> instead.</Tip>
+<Tip title="Am I using the right component?">For settings that are immediately applied, consider using a <Link href="/?path=/docs/components-toggle--overview" size={Link.sizes.SMALL} withoutSpacing>toggle switch</Link> instead.</Tip>
 
 ## Variants
 ### States
@@ -73,7 +73,7 @@ Has 4 states: regular, hover, selected, and disabled.
     {
       positive: {
         component:
-        <DialogContentContainer className="monday-style-story-checkbox_wrapper">
+          <DialogContentContainer className="monday-style-story-checkbox_wrapper">
             <Checkbox label="Item 1" />
             <Checkbox label="Item 2" checked />
             <Checkbox label="Item 3" checked />
@@ -81,7 +81,8 @@ Has 4 states: regular, hover, selected, and disabled.
         description:"Use checkboxes when one or more items can be selected."
       },
       negative: {
-        component: <DialogContentContainer className="monday-style-story-checkbox_wrapper">
+        component: 
+          <DialogContentContainer className="monday-style-story-checkbox_wrapper">
             <Checkbox label="Item 1" checked />
             <Checkbox label="Item 2" disabled />
             <Checkbox label="Item 3" disabled />
@@ -96,7 +97,9 @@ Has 4 states: regular, hover, selected, and disabled.
       },
       negative: {
         component: [
-          <div className="monday-style-story-checkbox_border"><Checkbox componentClassName="minus-margin" checked /></div>,
+          <div className="monday-style-story-checkbox_border">
+            <Checkbox componentClassName="monday-style-story-checkbox_minus-margin" checked />
+          </div>,
           <div className="monday-style-story-checkbox_border">Option</div>
         ],
         description:"Don’t use a separte div which is not related to the Checkbox component."

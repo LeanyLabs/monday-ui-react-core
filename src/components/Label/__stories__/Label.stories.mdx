@@ -5,7 +5,6 @@ import { TOOLTIP, COUNTER, CHIP } from "../../../storybook/components/related-co
 import { MultipleStoryElementsWrapper, Link } from "../../../storybook/components";
 import "./label.stories.scss";
 
-
 <Meta
   title="Components/Label"
   component={ Label }
@@ -28,8 +27,7 @@ export const labelTemplate = createComponentTemplate(Label);
 - [Feedback](#feedback)
 
 ## Overview
-Please write here the component description
-
+A label indicates the status of an item. It is not clickable.
 <Canvas>
   <Story name="Overview"
          args={ {text: "New"} }>
@@ -47,7 +45,9 @@ Please write here the component description
   "Use only UI colors, not content colors (like status colors).",
 ]}/>
 
-<Tip title="Check yourself">Need to count or indicate numbers? Use the <Link href="/?path=/docs/components-counter--overview">Counter</Link> component instead.</Tip>
+<Tip title="Check yourself">
+  Need to count or indicate numbers? Use the <Link href="/?path=/docs/components-counter--overview" size={Link.sizes.SMALL} withoutSpacing>Counter</Link> component instead.
+</Tip>
 
 ## Variants
 ### States
@@ -78,7 +78,8 @@ Please write here the component description
       },
       negative: {
         component:<Label text="123"/>,
-        description:<>Don’t use the label component in order to indicate numbers, instead use the <Link href="/?path=/docs/components-counter--overview" size={Link.sizes.MEDIUM}>Counter.</Link></>
+        description:
+          <>Don’t use the label component in order to indicate numbers, instead use the <Link href="/?path=/docs/components-counter--overview" withoutSpacing>Counter.</Link></>
       }
     },
     {
@@ -94,7 +95,7 @@ Please write here the component description
               <div className="monday-storybook-label_inline-block"><Label text="Featured" /><Label text="CRM" /><Label text="Export" /></div>
             </div>
           ],
-        description:<>Don’t use multiple lables for one item. Instead, use <Link href="/?path=/docs/components-chips--overview" size={Link.sizes.MEDIUM}>Chips.</Link></>
+        description:<>Don’t use multiple lables for one item. Instead, use <Link href="/?path=/docs/components-chips--overview" withoutSpacing>Chips.</Link></>
       }
     },
     {
@@ -109,7 +110,6 @@ Please write here the component description
     }
   ]}
 />
-
 
 ## Use cases and examples
 
@@ -131,7 +131,6 @@ In case of visual overload, use the secondary label in order to create hirarchy.
     </MultipleStoryElementsWrapper>
   </Story>
 </Canvas>
-
 
 ## Related components
 <RelatedComponents componentsNames={[TOOLTIP, COUNTER, CHIP]} />

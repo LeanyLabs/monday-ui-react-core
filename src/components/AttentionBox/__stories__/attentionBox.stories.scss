@@ -1,4 +1,7 @@
-.monday-style-attention-box{
+@import "../../../styles/themes.scss";
+@import "../../../styles/typography.scss";
+
+.monday-style-attention-box {
   &_column-wrapper {
     display: flex;
     flex-direction: column;
@@ -15,14 +18,77 @@
   }
 
   &_text {
-    font-style: normal;
-    font-weight: normal;
     font-size: 14px;
     line-height: 22px;
-    margin-bottom: 9px;
+  }
+
+  &_row-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 52px;
+    align-content: flex-start;
+  }
+
+  &_inline-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+  }  
+  
+  &_search-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 16px;
+}
+
+  &_search {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  &_lable {
+    font-size: 14px;
+    padding-left: 5px;
+    margin-top: 4px;
+
+  }
+
+  &_inline-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  &_name {
+    font-size: 14px;
+
+    span {
+      @include theme-prop(color, disabled-text-color);
+    }
   }
 }
 
 .box {
   width: 340px;
 }
+
+
+
+.att-box {
+  width: 460px;
+  margin-top: 10px;
+  .monday-style-attention-box-component__text {
+    align-content: center;
+    gap: 20px;
+  }
+}
+

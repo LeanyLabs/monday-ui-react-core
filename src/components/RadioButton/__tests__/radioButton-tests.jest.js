@@ -1,5 +1,6 @@
 import React from "react";
 import { fireEvent, render, cleanup, screen } from "@testing-library/react";
+import { expect as sinonExpect } from "../../../test/test-helpers";
 import RadioButton from "../RadioButton.jsx";
 
 describe("RadioButton tests", () => {
@@ -55,4 +56,13 @@ describe("RadioButton tests", () => {
     fireEvent.click(option2);
     expect(onChangedMock.mock.calls.length).toBe(1);
   });
+
+  it("should be the same text", () => {
+    const text = "test text";
+    const { getByText } = render(
+      <RadioButton text={text} />
+    );
+    const radioButtonComponentText = getByText(text)
+    sinonExpect(radioButtonComponentText).to.be.ok;
+  }); 
 });

@@ -75,13 +75,20 @@
       @include theme-prop(color, disabled-text-color);
     }
   }
+
+  &_icon {
+    margin: 0 5px 0 8px;
+  }
+
+  &_info {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .box {
   width: 340px;
 }
-
-
 
 .att-box {
   width: 460px;

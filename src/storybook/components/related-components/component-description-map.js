@@ -10,6 +10,7 @@ import { ToggleDescription } from "./descriptions/toggle-description";
 import { DropdownDescription } from "./descriptions/dropdown-description";
 import { AttentionBoxDescription } from "./descriptions/attention-box-description";
 import { AlertBannerDescription } from "./descriptions/alert-banner-description";
+import { ToastDescription } from "./descriptions/toast-discription";
 
 export const SPLIT_BUTTON = "split-button";
 export const BUTTON_GROUP = "button-group";
@@ -23,6 +24,7 @@ export const DROPDAWN = "dropdawn";
 export const CHIP = "chips";
 export const ATTENTION_BOX = "attention-box";
 export const ALERT_BANNER = "alert-banner";
+export const TOAST = "toast";
 
 export const descriptionTypesMap = new Map();
 
@@ -38,3 +40,4 @@ descriptionTypesMap.set(DROPDAWN, <DropdownDescription />);
 descriptionTypesMap.set(CHIP, <ChipsDescription />);
 descriptionTypesMap.set(ATTENTION_BOX, <AttentionBoxDescription />);
 descriptionTypesMap.set(ALERT_BANNER, <AlertBannerDescription />);
+descriptionTypesMap.set(TOAST, <ToastDescription />);

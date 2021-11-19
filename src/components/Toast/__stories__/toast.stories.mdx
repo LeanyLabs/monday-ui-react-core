@@ -5,8 +5,8 @@ import { createComponentTemplate } from "../../../storybook/functions/create-com
 import Button from "../../Button/Button.jsx";
 import { Link } from "../../../storybook/components";
 import { TOOLTIP, ATTENTION_BOX, ALERT_BANNER } from "../../../storybook/components/related-components/component-description-map";
-import "./toast.stories.scss";
 import ToastLineWrapper from "./ToastLineWrapper.jsx"
+import "./toast.stories.scss";
 
 <Meta
   title="Components/Toast"
@@ -15,7 +15,7 @@ import ToastLineWrapper from "./ToastLineWrapper.jsx"
 
 <!--- Component template -->
 
-export const toastTemplate = createComponentTemplate(Toast);
+export const toastTemplate = createComponentTemplate(ToastLineWrapper);
 
 <!--- Component documentation -->
 
@@ -34,7 +34,7 @@ A toast notification is a message object that presents timely information, inclu
 
 <Canvas>
   <Story name="Overview"
-         args={ {prop1: "prop's default value", prop2: "prop's default value"} }>
+         args={ {text: "General message toast", actions: [{ type: Toast.actionTypes.BUTTON, content: "Button" }]} }>
     { toastTemplate.bind({}) }
   </Story>
 </Canvas>

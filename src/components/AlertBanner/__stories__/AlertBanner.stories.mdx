@@ -2,6 +2,7 @@ import AlertBanner from "../AlertBanner";
 import AlertBannerText from "../AlertBannerText/AlertBannerText";
 import AlertBannerLink from "../AlertBannerLink/AlertBannerLink";
 import AlertBannerButton from "../AlertBannerButton/AlertBannerButton.jsx"
+import { Link } from "../../../storybook/components";
 import { ArgsTable, Story, Canvas, Meta } from "@storybook/addon-docs";
 import { createComponentTemplate } from "../../../storybook/functions/create-component-story";
 import { TOOLTIP, ATTENTION_BOX } from "../../../storybook/components/related-components/component-description-map";
@@ -48,7 +49,7 @@ Alert banners show pressing and high-signal messages, such as system alerts. The
   "Place the banner on the top of the screen, and push all other content below it.",
 ]}/>
 
-<Tip>Alert banners should be reserved only for high-signal, system-level alert messages. For in-app notifications use a Toast.</Tip>
+<Tip>Alert banners should be reserved only for high-signal, system-level alert messages. For in-app notifications use a <Link href="/?path=/docs/components-toast--overview" size={Link.sizes.SMALL} withoutSpacing>Toast.</Link></Tip>
 
 ## Variants
 ### Types
@@ -101,17 +102,29 @@ There are 4 types of alert banners: Primary, negative, positive, and inverted.
   rules={[
     {
       positive: {
-        component:<AlertBanner className="medium-container" />,
+        component:
+          <AlertBanner className="medium-container">
+            <AlertBannerText text="Join us at Elevate!" />
+            <AlertBannerLink text="RSVP now" href="https://monday.com" />
+          </AlertBanner>,
         description:"Use banners for system messages, background processes, and general updates."
       },
       negative: {
-        component:<AlertBanner className="medium-container" />,
-        description:"Don’t use banners for notifying a user of an action they have taken. Instead, provide visual feedback with a Toast."
+        component:
+           <AlertBanner className="medium-container">
+            <AlertBannerText text="We successfully archived 1 item" />
+          </AlertBanner>,
+        description:<>Don’t use banners for notifying a user of an action they have taken. Instead, provide visual feedback with a <Link href="/?path=/docs/components-toast--overview">Toast.</Link></>
       }
     },
     {
       positive: {
-        component:<AlertBanner className="medium-container" backgroundColor={AlertBanner.backgroundColors.NEGATIVE} />,
+        component:
+          <AlertBanner className="medium-container" backgroundColor={AlertBanner.backgroundColors.NEGATIVE}>
+            <AlertBannerText text="No connection" />
+            <AlertBannerLink text="Learn more" href="https://monday.com" />
+            <AlertBannerButton>Try again</AlertBannerButton>
+          </AlertBanner>,
         description:"If two actions are needed, use two different call to acitons."
       },
       negative: {
@@ -133,11 +146,19 @@ There are 4 types of alert banners: Primary, negative, positive, and inverted.
     },
     {
       positive: {
-        component:<AlertBanner backgroundColor={AlertBanner.backgroundColors.BLACK} className="medium-container"></AlertBanner>,
+        component:
+          <AlertBanner backgroundColor={AlertBanner.backgroundColors.DARK} className="medium-container">
+            <AlertBannerText text="Join us at Elevate!" />
+            <AlertBannerLink text="RSVP now" href="https://monday.com" />
+          </AlertBanner>,
         description:"Use only the 4 color types: primary, negative, positive, and inverted."
       },
       negative: { 
-        component:<AlertBanner backgroundColor={AlertBanner.backgroundColors.PINK} className="medium-container" />,
+        component:
+          <AlertBanner backgroundColor={AlertBanner.backgroundColors.PINK} className="medium-container">
+            <AlertBannerText text="Join us at Elevate!" />
+            <AlertBannerLink text="RSVP now" href="https://monday.com" />
+          </AlertBanner>,
         description:"Don’t choose other colors for alert banners. Keep it consistent."
       }
     }
@@ -146,7 +167,6 @@ There are 4 types of alert banners: Primary, negative, positive, and inverted.
 
 
 ## Use cases and examples
-
 ### Alert banner as an announcement
 Use when you’d like to notify about an event or cross-company announcment.
 <Canvas>

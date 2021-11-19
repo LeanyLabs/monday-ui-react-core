@@ -50,7 +50,7 @@ A toast notification is a message object that presents timely information, inclu
   "Toast should overlay permanent UI elements without blocking important actions.",
 ]}/>
 
-<Tip title="Check yourself">Need to inform the user about a system’s action? Use an <Link href="/?path=/docs/components-alertbanner--overview">Alert banner</Link> instead.</Tip>
+<Tip title="Check yourself">Need to inform the user about a system’s action? Use an <Link href="/?path=/docs/components-alertbanner--overview" size={Link.sizes.SMALL} withoutSpacing>Alert banner</Link> instead.</Tip>
 
 ## Variants
 ### Default with button
@@ -159,41 +159,21 @@ Use when something was deleted, a problem has occured, etc.
     {
       positive: {
         component:<Toast />,
-        description:"Best practice description."
+        description:"Use only one toast on a screen at a time."
       },
       negative: {
         component:<Toast />,
-        description:"Bad practice description."
+        description:<>Don’t place more than one toast or <Link href="/?path=/docs/components-alertbanner--overview">Alert banner </Link>on a screen at a time.</>
       }
     },
     {
       positive: {
         component:<Toast />,
-        description:"Best practice description."
+        description:"Always offer an option to undo the action. Keep the toast for 60 seconds before auto-removing it."
       },
       negative: {
         component:<Toast />,
-        description:"Bad practice description."
-      }
-    },
-    {
-      positive: {
-        component:<Toast />,
-        description:"Best practice description."
-      },
-      negative: {
-        component:<Toast />,
-        description:"Bad practice description."
-      }
-    },
-    {
-      positive: {
-        component:<Toast />,
-        description:"Best practice description."
-      },
-      negative: {
-        component:<Toast />,
-        description:"Bad practice description."
+        description:"Don’t offer an action without letting the user undo it."
       }
     }
   ]}

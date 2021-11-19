@@ -15,7 +15,12 @@ import "./AlertBanner.stories.scss";
 
 <!--- Component template -->
 
-export const alertBannerTemplate = createComponentTemplate(AlertBanner);
+export const alertBannerTemplate = (args) => { 
+  return (<AlertBanner {...args}>
+            <AlertBannerText text={ args.bannerText} />
+            <AlertBannerLink text={ args.linkText } href="https://monday.com" />
+          </AlertBanner>);
+}
 
 <!--- Component documentation -->
 
@@ -34,7 +39,7 @@ Alert banners show pressing and high-signal messages, such as system alerts. The
 
 <Canvas>
   <Story name="Overview"
-         args={ {prop1: "prop's default value", prop2: "prop's default value"} }>
+         args={ {bannerText: "Alert banner message", linkText: "this is a CTA"} }>
     { alertBannerTemplate.bind({}) }
   </Story>
 </Canvas>
@@ -164,7 +169,6 @@ There are 4 types of alert banners: Primary, negative, positive, and inverted.
     }
   ]}
 />
-
 
 ## Use cases and examples
 ### Alert banner as an announcement

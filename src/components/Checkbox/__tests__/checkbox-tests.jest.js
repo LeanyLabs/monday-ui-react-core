@@ -14,12 +14,14 @@ describe("Checkbox tests", () => {
   const option3Value = "3";
   const option3Text = "Option 3";
 
+  let onChangeMock1;
   let onChangedMock;
   beforeEach(() => {
+    onChangeMock1 = jest.fn();
     onChangedMock = jest.fn();
     render(
       <form name={formName}>
-        <Checkbox name={checkboxName} value={option1Value} label={option1Text} defaultChecked={true} />
+        <Checkbox name={checkboxName} value={option1Value} label={option1Text} defaultChecked={true} onChange={onChangeMock1} />
         <Checkbox name={checkboxName} value={option2Value} label={option2Text} onChange={onChangedMock} />
         <Checkbox name={checkboxName} value={option3Value} label={option3Text} />
       </form>
@@ -63,6 +65,13 @@ describe("Checkbox tests", () => {
     const option2 = screen.getByLabelText(option2Text);
     fireEvent.click(option2);
     expect(onChangedMock.mock.calls.length).toBe(1);
+  });
+
+  it("sould call the onchange with correct value", () => {
+    const option1 = screen.getByLabelText(option1Text);
+    fireEvent.click(option1);
+    const event = onChangeMock1.mock.calls[0][0];
+    expect(event.target.value).toBe(false)
   });
 
   describe("a11y", () => {

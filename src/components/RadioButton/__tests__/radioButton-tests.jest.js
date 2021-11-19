@@ -1,29 +1,32 @@
 import React from "react";
 import { fireEvent, render, cleanup, screen } from "@testing-library/react";
-import { expect as sinonExpect } from "../../../test/test-helpers";
 import RadioButton from "../RadioButton.jsx";
 
 describe("RadioButton tests", () => {
   const formName = "myForm";
   const radiosName = "radios";
+
   const option1Value = "1";
   const option1Text = "Option 1";
-
   const option2Value = "2";
   const option2Text = "Option 2";
-
   const option3Value = "3";
   const option3Text = "Option 3";
 
-  let onChangedMock;
+  let onChangeMock1;
+  let onChangeMock2;
+  let onChangeMock3;
 
   beforeEach(() => {
-    onChangedMock = jest.fn();
+    onChangeMock1 = jest.fn();
+    onChangeMock2 = jest.fn();
+    onChangeMock3 = jest.fn();
+
     render(
       <form name={formName}>
-        <RadioButton name={radiosName} value={option1Value} text={option1Text} defaultChecked={true} />
-        <RadioButton name={radiosName} value={option2Value} text={option2Text} onSelect={onChangedMock} />
-        <RadioButton name={radiosName} value={option3Value} text={option3Text} />
+        <RadioButton name={radiosName} value={option1Value} text={option1Text} onSelect={onChangeMock1} defaultChecked={true} />
+        <RadioButton name={radiosName} value={option2Value} text={option2Text} onSelect={onChangeMock2} />
+        <RadioButton name={radiosName} value={option3Value} text={option3Text} onSelect={onChangeMock3}/>
       </form>
     );
   });
@@ -51,10 +54,11 @@ describe("RadioButton tests", () => {
     expect(option3.checked).toBeFalsy();
   });
 
-  it("should call the onchange callback when clicked", () => {
+  it("should call the onChange callback when clicked", () => {
     const option2 = screen.getByLabelText(option2Text);
     fireEvent.click(option2);
-    expect(onChangedMock.mock.calls.length).toBe(1);
+    expect(onChangeMock2.mock.calls.length).toBe(1);
+    expect(onChangeMock2.mock.calls[0]).toBeTruthy();
   });
 
   it("should be the same text", () => {
@@ -63,6 +67,6 @@ describe("RadioButton tests", () => {
       <RadioButton text={text} />
     );
     const radioButtonComponentText = getByText(text)
-    sinonExpect(radioButtonComponentText).to.be.ok;
+    expect(radioButtonComponentText).toBeTruthy();
   }); 
 });

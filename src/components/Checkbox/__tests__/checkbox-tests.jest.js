@@ -1,6 +1,5 @@
 import React from "react";
 import { fireEvent, render, cleanup, screen } from "@testing-library/react";
-import { expect as sinonExpect } from "../../../test/test-helpers";
 import Checkbox from "../Checkbox";
 
 describe("Checkbox tests", () => {
@@ -17,13 +16,21 @@ describe("Checkbox tests", () => {
   let onChangeMock1;
   let onChangeMock2;
   let onChangeMock3;
+
   beforeEach(() => {
     onChangeMock1 = jest.fn();
     onChangeMock2 = jest.fn();
     onChangeMock3 = jest.fn();
+
     render(
       <form name={formName}>
-        <Checkbox name={checkboxName} value={option1Value} label={option1Text} defaultChecked={true} onChange={onChangeMock1} />
+        <Checkbox
+          name={checkboxName}
+          value={option1Value}
+          label={option1Text}
+          defaultChecked={true}
+          onChange={onChangeMock1}
+        />
         <Checkbox name={checkboxName} value={option2Value} label={option2Text} onChange={onChangeMock2} />
         <Checkbox name={checkboxName} value={option3Value} label={option3Text} onChange={onChangeMock3} />
       </form>
@@ -73,29 +80,19 @@ describe("Checkbox tests", () => {
     expect(onChangeMock3.mock.calls.length).toBe(0);
   });
 
-  it("should call the onchange with correct value", () => {
-    const option1 = screen.getByLabelText(option1Text);
-    fireEvent.change(option1, { target: { value: false } });
-    expect(option1.value).toBe("false")
-  });
-
   describe("a11y", () => {
     it("should add the label", () => {
       const ariaLabel = "Lable Name";
-      const { getByLabelText } = render(
-        <Checkbox label={ariaLabel} />
-      );
+      const { getByLabelText } = render(<Checkbox label={ariaLabel} />);
       const checkboxComponent = getByLabelText(ariaLabel);
-      sinonExpect(checkboxComponent).to.be.ok;
-    }); 
+      expect(checkboxComponent).toBeTruthy();
+    });
 
     it("should be the same text", () => {
       const ariaLabel = "Lable Name";
-      const { getByText } = render(
-        <Checkbox label={ariaLabel} />
-      );
-      const checkboxComponentText = getByText(ariaLabel)
-      sinonExpect(checkboxComponentText).to.be.ok;
-    }); 
+      const { getByText } = render(<Checkbox label={ariaLabel} />);
+      const checkboxComponentText = getByText(ariaLabel);
+      expect(checkboxComponentText).toBeTruthy();
+    });
   });
 });

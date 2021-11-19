@@ -6,6 +6,7 @@ import Button from "../../Button/Button.jsx";
 import { Link } from "../../../storybook/components";
 import { TOOLTIP, ATTENTION_BOX, ALERT_BANNER } from "../../../storybook/components/related-components/component-description-map";
 import "./toast.stories.scss";
+import ToastLineWrapper from "./ToastLineWrapper.jsx"
 
 <Meta
   title="Components/Toast"
@@ -56,48 +57,14 @@ A toast notification is a message object that presents timely information, inclu
 ### Default with button
 <Canvas>
   <Story name="Default with button">
-    {() => {
-      const [toastOpen, setToastOpen] = useState(false);
-      const [toastOpenButton, setToastOpenButton] = useState(false);
-      const toggleToast = () => setToastOpen(open => !open);
-      const closeToast = () => setToastOpen(false);
-      return (
-        <>
-          <Button onClick={() => toggleToast()}>Toast with button</Button>
-          <Toast
-            open={toastOpen}
-            onClose={() => closeToast()}
-            actions={[{ type: Toast.actionTypes.BUTTON, content: "Button" }]}
-          >
-            General message toast
-          </Toast>
-        </>
-      )
-    }}
+    <ToastLineWrapper text="General message toast" actions={[{ type: Toast.actionTypes.BUTTON, content: "Button" }]} />
   </Story>
 </Canvas>
 
 ### Toast with link
 <Canvas>
   <Story name="Toast with link">
-    {() => {
-      const [toastOpen, setToastOpen] = useState(false);
-      const [toastOpenButton, setToastOpenButton] = useState(false);
-      const toggleToast = () => setToastOpen(open => !open);
-      const closeToast = () => setToastOpen(false);
-      return (
-        <>
-          <Button onClick={() => toggleToast()}>Toast with link</Button>
-          <Toast
-            open={toastOpen}
-            onClose={() => closeToast()}
-             actions={[{ type: Toast.actionTypes.LINK, text: "Link to action", href: "https://monday.com" }]}
-          >
-            General message toast
-          </Toast>
-        </>
-      )
-    }}
+    <ToastLineWrapper text="General message toast" actions={[{ type: Toast.actionTypes.LINK, text: "Link to action", href: "https://monday.com" }]} />
   </Story>
 </Canvas>
 
@@ -105,25 +72,7 @@ A toast notification is a message object that presents timely information, inclu
 Use to providing a feedback loop. For example: Item copied.
 <Canvas>
   <Story name="Success message">
-    {() => {
-      const [toastOpen, setToastOpen] = useState(false);
-      const [toastOpenButton, setToastOpenButton] = useState(false);
-      const toggleToast = () => setToastOpen(open => !open);
-      const closeToast = () => setToastOpen(false);
-      return (
-        <>
-          <Button onClick={() => toggleToast()}>Success message</Button>
-          <Toast
-            open={toastOpen}
-            onClose={() => closeToast()}
-            type={Toast.types.POSITIVE}
-            actions={[{ type: Toast.actionTypes.BUTTON, content: "Undo 5" }]}
-          >
-           Positive message toast
-          </Toast>
-        </>
-      )
-    }}
+    <ToastLineWrapper type={Toast.types.POSITIVE} text="Negative message toast" actions={[{ type: Toast.actionTypes.BUTTON, content: "Undo 5" }]}></ToastLineWrapper>
   </Story>
 </Canvas>
 
@@ -131,25 +80,7 @@ Use to providing a feedback loop. For example: Item copied.
 Use when something was deleted, a problem has occured, etc.
 <Canvas>
   <Story name="Error message">
-    {() => {
-      const [toastOpen, setToastOpen] = useState(false);
-      const [toastOpenButton, setToastOpenButton] = useState(false);
-      const toggleToast = () => setToastOpen(open => !open);
-      const closeToast = () => setToastOpen(false);
-      return (
-        <>
-          <Button onClick={() => toggleToast()}>Error message</Button>
-          <Toast
-            open={toastOpen}
-            onClose={() => closeToast()}
-            type={Toast.types.NEGATIVE}
-            actions={[{ type: Toast.actionTypes.BUTTON, content: "Undo 5" }]}
-          >
-           Negative message toast
-          </Toast>
-        </>
-      )
-    }}
+    <ToastLineWrapper type={Toast.types.NEGATIVE} text="Negative message toast" actions={[{ type: Toast.actionTypes.BUTTON, content: "Undo 5" }]} />
   </Story>
 </Canvas>
 
@@ -158,21 +89,34 @@ Use when something was deleted, a problem has occured, etc.
   rules={[
     {
       positive: {
-        component:<Toast />,
+        component:<ToastLineWrapper type={Toast.types.POSITIVE} text="Duplicating Board" />,
         description:"Use only one toast on a screen at a time."
       },
       negative: {
-        component:<Toast />,
+        component:
+          <div className="monday-storybook-toast_inline-wrapper">
+            <ToastLineWrapper 
+              type={Toast.types.NEGATIVE}
+              hideIcon closeable={false} 
+              text="Duplicating Board"
+              className="monday-storybook-toast_tost-wrapper"
+              actions={[{ type: Toast.actionTypes.LINK, text: "Try again", href: "https://monday.com" }]}
+            />
+            <ToastLineWrapper 
+              type={Toast.types.POSITIVE} 
+              hideIcon
+              text="Duplicating Board" />,
+          </div>,
         description:<>Don’t place more than one toast or <Link href="/?path=/docs/components-alertbanner--overview">Alert banner </Link>on a screen at a time.</>
       }
     },
     {
       positive: {
-        component:<Toast />,
+        component:<ToastLineWrapper type={Toast.types.POSITIVE} text="We successfully archived 1 item" actions={[{ type: Toast.actionTypes.BUTTON, content: "Undo 5" }]} />,
         description:"Always offer an option to undo the action. Keep the toast for 60 seconds before auto-removing it."
       },
       negative: {
-        component:<Toast />,
+        component:<ToastLineWrapper type={Toast.types.POSITIVE} text="We successfully archived 1 item" />,
         description:"Don’t offer an action without letting the user undo it."
       }
     }
@@ -186,8 +130,7 @@ Use when something was deleted, a problem has occured, etc.
 After a user has done an action, provide feedback to close the loop. For example, when an item has been deleted, duplicated, etc.
 <Canvas>
   <Story name="Feedback loop">
-    <Toast />
-    <Toast />
+    <ToastLineWrapper type={Toast.types.POSITIVE} text="Negative message toast" actions={[{ type: Toast.actionTypes.BUTTON, content: "Undo 5" }]} />
   </Story>
 </Canvas>
 

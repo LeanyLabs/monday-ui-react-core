@@ -18,3 +18,7 @@
 .medium-container {
     width: 392px;
 }
+
+.pink {
+    @include theme-prop(background, private-color);
+}

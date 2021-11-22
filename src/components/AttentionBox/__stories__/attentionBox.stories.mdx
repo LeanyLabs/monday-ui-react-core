@@ -24,7 +24,7 @@ export const attentionBoxTemplate = createComponentTemplate(AttentionBox);
 
 <!--- Component documentation -->
 
-# AttentionBox
+# Attention Box
 - [Overview](#overview)
 - [Props](#props)
 - [Usage](#usage)
@@ -36,7 +36,6 @@ export const attentionBoxTemplate = createComponentTemplate(AttentionBox);
 
 ## Overview
 Attention box lets users know important information within content areas, as close as possible to the content it’s about.
-
 <Canvas>
   <Story name="Overview"
          args={ {title: "Attention box title", text: "Studies show that 100% of people who celebrate birthdays, will eventually die.", componentClassName: "box"} }>
@@ -111,7 +110,7 @@ There are 4 types of attention boxes: Primary, success, danger, and dark (natura
             <span className="monday-style-attention-box_text" >Catch up on updates from all your boards.</span>
             <AttentionBox text={<span className="monday-style-attention-box_info">7 days left on your free trial <Link>Learn More</Link></span>} compact componentClassName="att-box" />
           </div>,
-        description:<>Don’t use when a message applies at a system level, does not apply to a specific piece of content, or needs to alert all users. On those cases, use Alert banner.</>
+        description:<>Don’t use when a message applies at a system level, does not apply to a specific piece of content, or needs to alert all users. On those cases, use <Link href="?path=/docs/components-alertbanner--overview" withoutSpacing>Alert banner.</Link></>
       }
     }
   ]}
@@ -143,7 +142,7 @@ Provides cotextual and related information.
       <div className="monday-style-attention-box_search">
         <div className="monday-style-attention-box_inline-container">
           <Avatar size={Avatar.sizes.MEDIUM} src={person1} type={Avatar.types.IMG} />
-          <span className="monday-style-attention-box_name">May Kishon  <span>(UX/UI Product Designer)</span></span>
+          <span className="monday-style-attention-box_name">May Kishon<span>(UX/UI Product Designer)</span></span>
         </div>
         <div className="monday-style-attention-box_inline-container">
           <Icon iconSize="24" icon={Invite} className="monday-style-attention-box_icon" />

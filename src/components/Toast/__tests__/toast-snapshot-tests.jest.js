@@ -3,7 +3,7 @@ import renderer from "react-test-renderer";
 import Toast from "../Toast";
 
 describe("Toast renders correctly", () => {
-  it("renders correctly (renders nothing) with empty props", () => {
+  it("(renders nothing) with empty props", () => {
     const tree = renderer.create(<Toast />).toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -13,15 +13,15 @@ describe("Toast renders correctly", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it("renders toast when open is true", () => {
-    const tree = renderer.create(<Toast open={true}>Something Happened</Toast>).toJSON();
+  it("when open is true", () => {
+    const tree = renderer.create(<Toast open>Something Happened</Toast>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it("don't renders close button if closeable=false", () => {
+  it("and don't renders close button if closeable=false", () => {
     const tree = renderer
       .create(
-        <Toast open={true} closeable={false}>
+        <Toast open closeable={false}>
           Something Happened
         </Toast>
       )
@@ -29,10 +29,10 @@ describe("Toast renders correctly", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it("renders correctly with button", () => {
+  it("with button", () => {
     const tree = renderer
       .create(
-        <Toast open={true} actions={[{ type: Toast.actionTypes.BUTTON, content: "Undo 5" }]}>
+        <Toast open actions={[{ type: Toast.actionTypes.BUTTON, content: "Undo 5" }]}>
           Something Happened
         </Toast>
       )
@@ -40,11 +40,11 @@ describe("Toast renders correctly", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it("renders correctly with link", () => {
+  it("with link", () => {
     const tree = renderer
       .create(
         <Toast
-          open={true}
+          open
           actions={[{ type: Toast.actionTypes.LINK, text: "Lorem ipsum", href: "https://monday.com" }]}
         >
           Something Happened
@@ -54,11 +54,11 @@ describe("Toast renders correctly", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it("renders correctly with button and link", () => {
+  it("with button and link", () => {
     const tree = renderer
       .create(
         <Toast
-          open={true}
+          open
           actions={[
             { type: Toast.actionTypes.BUTTON, content: "Undo 5" },
             { type: Toast.actionTypes.LINK, text: "Lorem ipsum", href: "https://monday.com" }
@@ -68,6 +68,16 @@ describe("Toast renders correctly", () => {
         </Toast>
       )
       .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it("with negative type", () => {
+    const tree = renderer.create(<Toast open type={Toast.types.NEGATIVE}>Something Happened</Toast>).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it("when icon is hidden", () => {
+    const tree = renderer.create(<Toast hideIcon>Something Happened</Toast>).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

@@ -29,6 +29,7 @@ describe("<AlertBanner />", () => {
       fireEvent.click(container.querySelector(".monday-alert-banner__alert-banner-close-btn"));
       expect(onCloseStub.mock.calls.length).toBe(1);
     });
+    
     describe("a11y", () => {
       it("should add the label", () => {
         const ariaLabel = "Lable Name";

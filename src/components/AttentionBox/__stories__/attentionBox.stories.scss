@@ -46,7 +46,11 @@
     flex-direction: column;
     gap: 18px;
     padding: 16px;
-}
+  }
+
+  &_box {
+    width: 340px;
+  }
 
   &_search {
     display: flex;
@@ -85,18 +89,13 @@
     display: flex;
     justify-content: space-between;
   }
-}
 
-.box {
-  width: 340px;
-}
-
-.att-box {
-  width: 460px;
-  margin-top: 10px;
-  .monday-style-attention-box-component__text {
-    align-content: center;
-    gap: 20px;
+  &_att-box {
+    width: 460px;
+    margin-top: 10px;
+    .monday-style-attention-box-component__text {
+      align-content: center;
+      gap: 20px;
+    }
   }
 }
-

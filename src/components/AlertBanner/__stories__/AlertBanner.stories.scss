@@ -6,19 +6,29 @@
       flex-direction: column;
       gap: 16px;
   }
-}
 
-.container {
-    width: 610px;
-}
+  &_container {
+     width: 610px;
+  }
 
-.small-container {
+  &_small-container {
     width: 320px;
-}
-.medium-container {
+ }
+
+ &_medium-container {
     width: 392px;
 }
 
-.pink {
-    @include theme-prop(background, private-color);
+  &_pink {
+    .monday-alert-banner__close-button-wrapper {
+      @include theme-prop(background, private-color);
+    }
+    .monday-alert-banner__inner {
+      @include theme-prop(background, private-color);
+    }
+    .monday-alert-banner__alert-banner-close-btn {
+      @include theme-prop(background, private-color);
+    }
+  }
 }
+   

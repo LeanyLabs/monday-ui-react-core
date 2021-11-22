@@ -38,7 +38,7 @@ export const attentionBoxTemplate = createComponentTemplate(AttentionBox);
 Attention box lets users know important information within content areas, as close as possible to the content it’s about.
 <Canvas>
   <Story name="Overview"
-         args={ {title: "Attention box title", text: "Studies show that 100% of people who celebrate birthdays, will eventually die.", componentClassName: "box"} }>
+         args={ {title: "Attention box title", text: "Studies show that 100% of people who celebrate birthdays, will eventually die.", componentClassName: "monday-style-attention-box_box"} }>
     { attentionBoxTemplate.bind({}) }
   </Story>
 </Canvas>
@@ -62,10 +62,10 @@ There are 4 types of attention boxes: Primary, success, danger, and dark (natura
 <Canvas>
   <Story name="States">
     <MultipleStoryElementsWrapper className="monday-style-attention-box_column-wrapper">
-      <AttentionBox title="Primary" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." componentClassName="box" />
-      <AttentionBox title="Success" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." type={ATTENTION_BOX_TYPES.SUCCESS} componentClassName="box" />
-      <AttentionBox title="Danger" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." type={ATTENTION_BOX_TYPES.DANGER} componentClassName="box" />
-      <AttentionBox title="Dark" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." type={ATTENTION_BOX_TYPES.DARK} componentClassName="box" />
+      <AttentionBox title="Primary" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." componentClassName="monday-style-attention-box_box" />
+      <AttentionBox title="Success" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." type={ATTENTION_BOX_TYPES.SUCCESS} componentClassName="monday-style-attention-box_box" />
+      <AttentionBox title="Danger" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." type={ATTENTION_BOX_TYPES.DANGER} componentClassName="monday-style-attention-box_box" />
+      <AttentionBox title="Dark" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry." type={ATTENTION_BOX_TYPES.DARK} componentClassName="monday-style-attention-box_box" />
     </MultipleStoryElementsWrapper>
 </Story>
 </Canvas>
@@ -74,8 +74,8 @@ There are 4 types of attention boxes: Primary, success, danger, and dark (natura
 <Canvas>
   <Story name="Dismissable ">
     <div className="monday-style-attention-box_row-wrapper">
-      <AttentionBox title="Regular attention box" text="Dismissable attention box with two lines of content." onClose componentClassName="box" />
-      <AttentionBox text="Attention box in compact mode" onClose compact componentClassName="box" />
+      <AttentionBox title="Regular attention box" text="Dismissable attention box with two lines of content." onClose componentClassName="monday-style-attention-box_box" />
+      <AttentionBox text="Attention box in compact mode" onClose compact componentClassName="monday-style-attention-box_box" />
     </div>
   </Story>
 </Canvas>
@@ -85,7 +85,7 @@ There are 4 types of attention boxes: Primary, success, danger, and dark (natura
   rules={[
     {
       positive: {
-        component:<AttentionBox title="Attention box title" text="Studies show that 100% of people who celebrate birthdays, will eventually die." componentClassName="box"/>,
+        component:<AttentionBox title="Attention box title" text="Studies show that 100% of people who celebrate birthdays, will eventually die." componentClassName="monday-style-attention-box_box"/>,
         description:"Provide a short and brief title, and explanation related to the title."
       },
       negative: {
@@ -99,7 +99,7 @@ There are 4 types of attention boxes: Primary, success, danger, and dark (natura
           <div>
             <span className="monday-style-attention-box_title">Inbox</span>
             <span className="monday-style-attention-box_text" >Catch up on updates from all your boards.</span>
-            <AttentionBox text={<span className="monday-style-attention-box_info">Get your monday.com notifications<Link>Learn More</Link></span>} componentClassName="att-box"  />
+            <AttentionBox text={<span className="monday-style-attention-box_info">Get your monday.com notifications<Link>Learn More</Link></span>} componentClassName="monday-style-attention-box_att-box"  />
           </div>,
         description:"Use when you are speaking directly to a piece of content and the notification can be positioned close to the content."
       },
@@ -108,7 +108,7 @@ There are 4 types of attention boxes: Primary, success, danger, and dark (natura
           <div>
             <span className="monday-style-attention-box_title">Inbox</span>
             <span className="monday-style-attention-box_text" >Catch up on updates from all your boards.</span>
-            <AttentionBox text={<span className="monday-style-attention-box_info">7 days left on your free trial <Link>Learn More</Link></span>} compact componentClassName="att-box" />
+            <AttentionBox text={<span className="monday-style-attention-box_info">7 days left on your free trial <Link>Learn More</Link></span>} compact componentClassName="monday-style-attention-box_att-box" />
           </div>,
         description:<>Don’t use when a message applies at a system level, does not apply to a specific piece of content, or needs to alert all users. On those cases, use <Link href="?path=/docs/components-alertbanner--overview" withoutSpacing>Alert banner.</Link></>
       }

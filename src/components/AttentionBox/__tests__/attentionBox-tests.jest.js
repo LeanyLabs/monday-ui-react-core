@@ -1,19 +1,22 @@
 import React from "react";
-import { fireEvent, render, cleanup } from "@testing-library/react";
-import { act } from "@testing-library/react-hooks";
+import { fireEvent, render, screen } from "@testing-library/react";
 import AttentionBox from "../AttentionBox";
 
 
-const renderComponent = props => {
-  return render(<AttentionBox {...props} />);
-};
-
 describe("AttentionBox tests", () => {
-  afterEach(() => {
-    cleanup();
+  const title = "title";
+  const text = "text";
+  let onCloseMock;
+  let attentionBoxComponent;
+  beforeEach(() => {
+    onCloseMock = jest.fn();
+    attentionBoxComponent = render(
+      <AttentionBox onClose={onCloseMock} title={title} text={text}  />
+    );
   });
 
-  it("calls x when y", () => {});
-
-  it("should do  x when y", () => {});
+  it("should call the click callback when clicked", () => {
+    fireEvent.click(screen.getByLabelText('Close'));
+    expect(onCloseMock.mock.calls.length).toBe(1);
+  })
 });

@@ -17,6 +17,7 @@ export const ToastDescription = () => {
     ),
     []
   );
+  
   return (
     <RelatedComponent
       component={component}

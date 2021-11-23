@@ -7,6 +7,7 @@ describe("AttentionBox tests", () => {
   const text = "text";
   let onCloseMock;
   let attentionBoxComponent;
+  
   beforeEach(() => {
     onCloseMock = jest.fn();
     attentionBoxComponent = render(

@@ -3,7 +3,6 @@ import { fireEvent, render, cleanup } from "@testing-library/react";
 import { act } from "@testing-library/react-hooks";
 import Toast from "../Toast";
 
-
 const renderComponent = props => {
   return render(<Toast {...props} />);
 };

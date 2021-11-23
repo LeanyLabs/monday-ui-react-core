@@ -10,7 +10,7 @@ import { ToggleDescription } from "./descriptions/toggle-description";
 import { DropdownDescription } from "./descriptions/dropdown-description";
 import { AttentionBoxDescription } from "./descriptions/attention-box-description";
 import { AlertBannerDescription } from "./descriptions/alert-banner-description";
-import { ToastDescription } from "./descriptions/toast-discription";
+import { ToastDescription } from "./descriptions/toast-description";
 
 export const SPLIT_BUTTON = "split-button";
 export const BUTTON_GROUP = "button-group";

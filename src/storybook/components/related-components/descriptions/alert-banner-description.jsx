@@ -18,6 +18,7 @@ export const AlertBannerDescription = () => {
     ),
     []
   );
+  
   return (
     <RelatedComponent
       component={component}

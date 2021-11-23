@@ -18,6 +18,7 @@ export const AttentionBoxDescription = () => {
     ),
     []
   );
+  
   return (
     <RelatedComponent component={component} title="Attention box" description="Displays content classification." />
   );

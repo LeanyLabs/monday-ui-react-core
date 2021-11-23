@@ -12,7 +12,7 @@ export const ToastDescription = () => {
   const component = useMemo(
     () => (
       <div style={style}>
-        <ToastLineWrapper text="General message" actions={[{ type: Toast.actionTypes.BUTTON, content: "Button" }]} />
+        <ToastLineWrapper text="General Message" actions={[{ type: Toast.actionTypes.BUTTON, content: "Button" }]} />
       </div>
     ),
     []

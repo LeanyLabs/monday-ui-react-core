@@ -84,13 +84,6 @@ describe("Checkbox tests", () => {
     expect(onChangeMock3.mock.calls.length).toBe(0);
   });
 
-  it("sould call the onchange with correct value", () => {
-    const option1 = screen.getByLabelText(option1Text);
-    fireEvent.click(option1);
-    const event = onChangeMock1.mock.calls[0][0];
-    expect(event.target.value).toBe(false)
-  });
-
   describe("a11y", () => {
     it("should add the label", () => {
       const ariaLabel = "Lable Name";

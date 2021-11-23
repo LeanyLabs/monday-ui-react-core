@@ -3,7 +3,6 @@ import { render, cleanup, fireEvent } from "@testing-library/react";
 import AlertBanner from "../AlertBanner";
 import AlertBannerButton from "../AlertBannerButton/AlertBannerButton";
 import AlertBannerText from "../AlertBannerText/AlertBannerText";
-import { expect as sinonExpect } from "../../../test/test-helpers";
 
 const NOOP = () => {};
 
@@ -11,9 +10,11 @@ describe("<AlertBanner />", () => {
   afterEach(() => {
     cleanup();
   });
+
   describe("on close", () => {
     let onCloseStub;
     let alertBannerComponent;
+
     beforeEach(() => {
       onCloseStub = jest.fn();
       alertBannerComponent = render(
@@ -37,9 +38,8 @@ describe("<AlertBanner />", () => {
           <AlertBanner ariaLabel={ariaLabel} />
         );
         const alertBannerComponent = getByLabelText(ariaLabel);
-        sinonExpect(alertBannerComponent).to.be.ok;
+        expect(alertBannerComponent).toBeTruthy();
       }); 
     });
   });
-
 });
